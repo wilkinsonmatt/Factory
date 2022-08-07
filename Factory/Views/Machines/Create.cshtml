@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factory.Models;
+@model Factory.Models.Machine;
+
+<h4>Adopt a new friend (add machine)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.MachineName)
+    @Html.TextBoxFor(model => model.MachineName)
+
+    @Html.LabelFor(model => model.MachineType)
+    @Html.TextBoxFor(model => model.MachineType)
+
+    @Html.Label("Select engineer")
+    @Html.DropDownList("EngineerId")
+
+    <!-- @Html.LabelFor(model => model.BirthDate)
+    @Html.TextBoxFor(model => model.BirthDate) -->
+
+    <input type="submit" value="Add new machine" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all machines", "Index")</p>
