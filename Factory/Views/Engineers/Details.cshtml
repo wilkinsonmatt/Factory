@@ -6,7 +6,7 @@
 
 <h2>Engineer Details</h2>
 <hr />
-<h3>@Html.Label("Engineer Name: ") @Html.DisplayFor(model => model.EngineerName)</h3>
+<h5>@Html.Label("Engineer Name: ") @Html.DisplayFor(model => model.EngineerName)</h5>
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -14,7 +14,7 @@
 }
 else
 {
-  <h4>Types of Machines this Engineer works with:</h4>
+  <h5>All machines this engineer is licensed to repair:</h5>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
@@ -23,8 +23,12 @@ else
   </ul>
 }
 
-<p>@Html.ActionLink("Back to list of Engineer", "Index")</p>
+<br>
+<br>
 <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Add a Engineer", "AddEngineer", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<p>@Html.ActionLink("Add an Engineer", "AddEngineer", new { id = Model.EngineerId })</p>
+
+<br>
+<p>@Html.ActionLink("Back to list of Engineer", "Index")</p>
+<p>@Html.ActionLink("Home Page", "Index", "Home")</p>

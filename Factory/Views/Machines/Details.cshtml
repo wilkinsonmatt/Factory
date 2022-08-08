@@ -10,22 +10,22 @@
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This machine does not belong to any engineers</p>
-  <p>Machine Type: @Html.DisplayFor(model => model.MachineType)</p>
+  <p>No Engineers are licensed to repair this machine</p>
+  <p>@Html.DisplayFor(model => model.MachineType)</p>
 }
 else
 {
-  <h4>Engineers the machine belongs to:</h4>
+  <h4>All Engineers licensed to repair this machine:</h4>
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
     <li>@join.Engineer.EngineerName</li>
   }
-  <p>Machine Type: @Html.DisplayFor(model => model.MachineType)</p>
+  <p>@Html.DisplayFor(model => model.MachineType)</p>
   </ul>
 }
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Back to list of machines", "Index")</p>
 <p>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Add a Engineer", "AddEngineer", new { id = Model.MachineId })</p>
