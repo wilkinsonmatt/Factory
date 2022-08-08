@@ -7,6 +7,8 @@
 <h2>Engineer Details</h2>
 <hr />
 <h5>@Html.Label("Engineer Name: ") @Html.DisplayFor(model => model.EngineerName)</h5>
+<h5>@Html.Label("Engineer Specialty: ") @Html.DisplayFor(model => model.EngineerSpecialty)</h5>
+
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -23,11 +25,11 @@ else
   </ul>
 }
 
+<p>@Html.ActionLink("Add to list of machines this engineer is licensed to repair ", "AddMachine", new { id = Model.EngineerId })</p
 <br>
 <br>
 <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
 <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Add to list of machines this engineer can repair ", "AddEngineer", new { id = Model.EngineerId })</p>
 
 <hr />
 <br>
