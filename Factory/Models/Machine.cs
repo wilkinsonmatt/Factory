@@ -12,7 +12,6 @@ namespace Factory.Models
     public int MachineId { get; set; }
     public string MachineType { get; set; }
     public string MachineName { get; set; }
-    public DateTime BirthDate { get; set; }
     public virtual ICollection<EngineerMachine> JoinEntities { get; }
   }
 }

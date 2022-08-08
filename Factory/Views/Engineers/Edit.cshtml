@@ -21,11 +21,12 @@
     <br>
     @Html.TextBoxFor(model => model.EngineerSpecialty)
     <br>
-    @Html.Label("Machines Engineer Works With:")
+    @Html.Label("Machine this Engineer can repair:")
     <br>
     @Html.DropDownList("MachineId")
 
     <input type="submit" value="Save" />
 }
 
+<hr />
 <p>@Html.ActionLink("Back to list", "Index")</p>
